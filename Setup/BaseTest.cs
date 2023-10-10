@@ -1,6 +1,7 @@
 ﻿using AutomatizacionPrueba.Setup;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,14 +12,12 @@ namespace AutomatizacionPrueba
 {
     public class BaseTest
     {
-        public IWebDriver driverChrome { get; private set; }
+        protected IWebDriver driver = new ChromeDriver();
 
         [TestInitialize]
         public void Setup()
         {
-            var drivers = new WebDriverFactory();
-            driverChrome = drivers.Create();
-            driverChrome.Manage().Window.Maximize();
+            driver.Manage().Window.Maximize();
         }
 
         [TestCleanup]
@@ -29,8 +28,8 @@ namespace AutomatizacionPrueba
 
         public void close()
         {
-            driverChrome.Close();
-            driverChrome.Quit();
+            driver.Close();
+            driver.Quit();
         }
     }
 }

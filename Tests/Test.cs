@@ -10,7 +10,7 @@ namespace AutomatizacionPrueba
         [TestMethod]
         public void LoginSendbox()
         {
-            Login login = new LoginSendbox(driverChrome);
+            Login login = new Login(driver);
             login.login("20255735439", "asdasd123");
         }
     }

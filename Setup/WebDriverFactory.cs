@@ -9,23 +9,23 @@ using System.Threading.Tasks;
 
 namespace AutomatizacionPrueba.Setup
 {
-    public class WebDriverFactory
-    {
+    // public class WebDriverFactory
+    // {
 
-        string driverLocation = Directory.GetCurrentDirectory() + @"\Drivers\";
-        public IWebDriver Create()
-        {
-            return GetChromeDriver();
-        }
+    //     string driverLocation = Directory.GetCurrentDirectory() + @"\Drivers\";
+    //     public IWebDriver Create()
+    //     {
+    //         return GetChromeDriver();
+    //     }
 
-        //IWebDrvier es una interfaz que busca en el escritorio por defecto de, las ref erencias del proyecto, el ChromeDriver.exe
-        //Este metodo busca la localizaicon del Chrome driver y devuelve un objeto ChromeDriver() con parametro de localizacion
-        private IWebDriver GetChromeDriver()
-        {
-            //var directorio = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-            ChromeOptions options = new ChromeOptions();
-            options.AddUserProfilePreference("download.default_directory", @"D:\Test");
-            return new ChromeDriver(driverLocation, options);
-        }
-    }
+    //     //IWebDrvier es una interfaz que busca en el escritorio por defecto de, las ref erencias del proyecto, el ChromeDriver.exe
+    //     //Este metodo busca la localizaicon del Chrome driver y devuelve un objeto ChromeDriver() con parametro de localizacion
+    //     private IWebDriver GetChromeDriver()
+    //     {
+    //         //var directorio = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+    //         ChromeOptions options = new ChromeOptions();
+    //         options.AddUserProfilePreference("download.default_directory", @"D:\Test");
+    //         return new ChromeDriver(driverLocation, options);
+    //     }
+    // }
 }

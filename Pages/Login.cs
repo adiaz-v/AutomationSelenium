@@ -43,7 +43,7 @@ namespace AutomatizacionPrueba.Pages
 
         public void login(string usuario, string contraseña)
         {
-            driver.Navigate().GoToUrl("");
+            driver.Navigate().GoToUrl("https://www.google.com.ar/");
             wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(txtUsuario));
             txtUsuario.SendKeys(usuario);
             wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(txtContraseña));
